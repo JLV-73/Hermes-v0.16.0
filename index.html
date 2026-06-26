@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Encodage et viewport responsive -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Titre exact de l'application -->
+  <title>Chiara Locale — Hermes Agent v0.16.0 — Mode d'emploi opérationnel JLV</title>
+
+  <!-- Favicon JLV monogramme or -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Feuille de styles principale (remplie par Task 3) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Lien d'évitement pour accessibilité clavier -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- =====================================================
+       TOPBAR — logo, titre, badges, recherche
+  ====================================================== -->
+  <header class="topbar" role="banner">
+    <!-- Logo JLV -->
+    <a href="#accueil" class="topbar__logo-link" aria-label="Accueil Chiara Locale">
+      <img
+        src="assets/logo_JLV.jpg"
+        alt="Logo JLV"
+        class="topbar__logo"
+        width="48"
+        height="48"
+      />
+    </a>
+
+    <!-- Bloc titre + sous-titre -->
+    <div class="topbar__title-block">
+      <h1 class="topbar__title">Chiara Locale</h1>
+      <p class="topbar__subtitle">Cockpit Hermes Agent — Mode d'emploi opérationnel JLV</p>
+    </div>
+
+    <!-- Badges de version -->
+    <div class="topbar__badges" aria-label="Versions">
+      <span class="badge badge--gold">Hermes v0.16.0</span>
+      <span class="badge badge--blue">Chiara AI</span>
+      <span class="badge badge--neutral">Local / Hors-ligne</span>
+    </div>
+
+    <!-- Champ de recherche globale (filtrage de sections par JS) -->
+    <div class="topbar__search">
+      <label for="search" class="sr-only">Rechercher dans la documentation</label>
+      <input
+        type="search"
+        id="search"
+        name="search"
+        placeholder="Rechercher…"
+        autocomplete="off"
+        aria-label="Rechercher dans la documentation"
+      />
+    </div>
+  </header>
+
+  <!-- =====================================================
+       BOUTON MENU MOBILE — toggle sidebar
+  ====================================================== -->
+  <button
+    id="navToggle"
+    class="nav-toggle"
+    aria-expanded="false"
+    aria-controls="sidebar"
+    aria-label="Ouvrir/fermer le menu de navigation"
+  >
+    <!-- Icône hamburger SVG inline -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+      <line x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- =====================================================
+       SIDEBAR — navigation principale (liens injectés par app.js)
+       Les <li> statiques servent de fallback sans JS
+  ====================================================== -->
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
+    <!-- Logo Hermes dans la sidebar -->
+    <div class="sidebar__brand">
+      <img src="assets/hermes-logo.svg" alt="Hermes logo" class="sidebar__hermes-logo" width="40" height="40" />
+      <span class="sidebar__brand-name">Hermes v0.16.0</span>
+    </div>
+
+    <!-- Liste de navigation — remplie/enrichie par app.js, fallback statique -->
+    <ul id="sidebar-nav" role="list">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#orchestratrice">Chiara orchestratrice</a></li>
+      <li><a href="#interfaces">Interfaces</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#agents">Agents</a></li>
+      <li><a href="#media">Médias</a></li>
+      <li><a href="#cron">Cron / Planification</a></li>
+      <li><a href="#rapports">Rapports</a></li>
+      <li><a href="#securite">Sécurité</a></li>
+      <li><a href="#diagnostic">Diagnostic</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#prompts">Prompts</a></li>
+    </ul>
+  </nav>
+
+  <!-- =====================================================
+       TAGBAR — filtrage par étiquettes (rempli par app.js)
+  ====================================================== -->
+  <div id="tagbar" class="tagbar" aria-label="Filtrer par étiquette" role="toolbar"></div>
+
+  <!-- =====================================================
+       CONTENU PRINCIPAL — 13 sections squelettes
+       Chaque section a un <h2> et un <div id="*-body"> ciblé par app.js
+  ====================================================== -->
+  <main id="main-content" class="main-content" role="main">
+
+    <!-- 1. Accueil -->
+    <section id="accueil" class="section" data-tags="Vision,Orchestration">
+      <h2 class="section-title">Accueil — Vision générale</h2>
+      <div class="section-body" id="accueil-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 2. Architecture -->
+    <section id="architecture" class="section" data-tags="Architecture,Technique">
+      <h2 class="section-title">Architecture du système</h2>
+      <div class="section-body" id="architecture-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 3. Chiara orchestratrice -->
+    <section id="orchestratrice" class="section" data-tags="Chiara,Orchestration,IA">
+      <h2 class="section-title">Chiara orchestratrice</h2>
+      <div class="section-body" id="orchestratrice-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 4. Interfaces -->
+    <section id="interfaces" class="section" data-tags="Interfaces,Telegram,Desktop,CLI">
+      <h2 class="section-title">Interfaces d'accès</h2>
+      <div class="section-body" id="interfaces-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 5. Skills -->
+    <section id="skills" class="section" data-tags="Skills,Capacités,Catalogue">
+      <h2 class="section-title">Skills — Catalogue des capacités</h2>
+      <div class="section-body" id="skills-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 6. Agents -->
+    <section id="agents" class="section" data-tags="Agents,Sous-agents,Automatisation">
+      <h2 class="section-title">Agents et sous-agents</h2>
+      <div class="section-body" id="agents-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 7. Médias -->
+    <section id="media" class="section" data-tags="Médias,Images,Audio,Vidéo">
+      <h2 class="section-title">Production médias</h2>
+      <div class="section-body" id="media-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 8. Cron / Planification -->
+    <section id="cron" class="section" data-tags="Cron,Planification,Automatisation">
+      <h2 class="section-title">Cron — Planification automatisée</h2>
+      <div class="section-body" id="cron-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 9. Rapports -->
+    <section id="rapports" class="section" data-tags="Rapports,Livrables,Export">
+      <h2 class="section-title">Rapports et livrables</h2>
+      <div class="section-body" id="rapports-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 10. Sécurité -->
+    <section id="securite" class="section" data-tags="Sécurité,Confidentialité,Local">
+      <h2 class="section-title">Sécurité et confidentialité</h2>
+      <div class="section-body" id="securite-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 11. Diagnostic -->
+    <section id="diagnostic" class="section" data-tags="Diagnostic,Dépannage,Debug">
+      <h2 class="section-title">Diagnostic et dépannage</h2>
+      <div class="section-body" id="diagnostic-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 12. Roadmap -->
+    <section id="roadmap" class="section" data-tags="Roadmap,Évolution,Futur">
+      <h2 class="section-title">Roadmap — Évolutions prévues</h2>
+      <div class="section-body" id="roadmap-body"><!-- rempli par app.js --></div>
+    </section>
+
+    <!-- 13. Prompts -->
+    <section id="prompts" class="section" data-tags="Prompts,Exemples,Référence">
+      <h2 class="section-title">Prompts — Référentiel d'exemples</h2>
+      <div class="section-body" id="prompts-body"><!-- rempli par app.js --></div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <img src="assets/chiara-avatar.svg" alt="Chiara avatar" class="site-footer__avatar" width="28" height="28" />
+      <p class="site-footer__text">
+        Chiara Locale — Hermes Agent v0.16.0 &mdash; Documentation opérationnelle JLV &mdash; juin 2026
+      </p>
+      <p class="site-footer__credits">
+        Conçu par <strong>Jean-Louis Viretti (JLV)</strong> — Application 100&nbsp;% locale, zéro dépendance.
+      </p>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       TOAST — feedback de copie/actions (accessible)
+  ====================================================== -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- =====================================================
+       SCRIPTS — ordre impératif : data.js puis app.js
+  ====================================================== -->
+  <!-- Source de vérité des données (Task 2) -->
+  <script src="data.js"></script>
+  <!-- Moteur de rendu et comportements UI (Task 4) -->
+  <script src="app.js"></script>
+
+</body>
+</html>
